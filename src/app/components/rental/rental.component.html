@@ -2,23 +2,17 @@
     <thead>
       <tr>
         <th>Id</th>
-        <th>Marka</th>
-        <th>Color</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>Şirket</th>
-        <th>Kiralama Tarihi</th>
-        <th>Dönüş Tarihi</th>
+        <th>Car Name</th>
+        <th>Customer</th>
+        <th>Rent Date</th>
+        <th>Return Date</th>
       </tr>
     </thead>
     <tr *ngFor="let rental of rentals">
-      <td>{{ rental.id }}</td>
-      <td>{{ rental.brandName }}</td>
-      <td>{{ rental.colorName }}</td>    
-      <td>{{ rental.firstName }}</td>
-      <td>{{ rental.lastName }}</td>
-      <td>{{ rental.companyName }}</td>
-      <td>{{ rental.rentDate }}</td>
-      <td>{{ rental.returnDate}}</td>
+      <td>{{rental.id}}</td>
+      <td>{{rental.carName}}</td>
+      <td>{{rental.userName}}</td>
+      <td>{{rental.rentDate}}</td>
+      <td>{{rental.returnDate}}</td> 
     </tr>
   </table>
