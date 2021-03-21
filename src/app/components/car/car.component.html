@@ -1,14 +1,28 @@
-<div class="row">
-  <div *ngFor="let car of cars" class="car" style="width: 20rem">
-   
-    <div class="card-body">
-      <h5 class="card-title">{{ car.carName }}</h5>
+<div class="row ml-0 mr-0">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+        <input type="text" >
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Id: {{ car.carId }}</li>
-      <li class="list-group-item">Marka: {{ car.brandName }}</li>
-      <li class="list-group-item">Renk: {{car.colorName }}</li>
-      <li class="list-group-item">Fiyat: {{ car.dailyPrice }} TL</li>
-    </ul>
-  </div>
+</div>
+
+<div class="row ml-0 mr-0">
+    <div *ngFor="let car of cars " class="col-md-4 my-4">
+        <div  class="card" style="width: 100%;">
+            <img src="{{carImageBasePath}}{{getCarImage(car)}}" class="card-img-top" alt="Araba Resmi">
+
+            <div class="card-body">
+              <h5 class="card-title text-center">{{car.carName}}</h5>
+              <hr>
+              <p> <b>Marka :</b> {{car.brandName}} </p>
+              <hr>
+              <p> <b>Model Yılı :</b> {{car.modelYear }} </p>
+              <hr>
+              <p> <b>Günlük Fiyatı :</b> {{car.dailyPrice }} </p>
+              <hr>
+              <p> <b>Renk :</b> {{car.colorName}} </p>
+              <hr>
+              <a routerLink="cars/detail/{{car.carId}}" class="btn btn-outline-dark mt-2">Detay</a>
+            </div>
+          </div>
+    </div>
 </div>
