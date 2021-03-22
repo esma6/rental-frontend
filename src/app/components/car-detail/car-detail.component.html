@@ -1,29 +1,39 @@
-<div class="row mt-4 ml-0 mr-0">
-    <div class="col-md-8 offset-md-2">
-        <div id="carouselExampleIndicators" class="carousel slide z-index-10" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner ">
-              <div *ngFor="let image of carImages let index = index" [ngClass]="sliderItemActive(index)" >
-                <img class="d-block  w-100" src="{{carImageBasePath}}{{image.imagePath}}" alt="First slide">
+<div class="card">
+    <div class="card-header text-center">
+      <div class="card-body">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner  d-flex "
+             style="height: 50vh; min-height: 20rem; max-height: 30rem">
+    
+             <div *ngFor="let image of carImages let index = index" [ngClass]="sliderItemActive(index)" >
+                 <img
+              src="{{carImageBasePath}}{{image.imagePath}}"
+              class=""
+              style="height: 100%; width: 100%; object-fit: contain"
+              alt="First slide"
+            />
               </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+             </div>
+              <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    
         </div>
     </div>
-</div>
 
 <div class="row ml-0 mr-0">
-    <div class="col-md-8 offset-md-2 table-animations">
+    <div class="col-md-8 offset-md-2 ">
         <div *ngIf="carDetail" class="mt-4">
             <table class="table table-bordered">
                 <tr>
